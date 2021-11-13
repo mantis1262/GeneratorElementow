@@ -12,53 +12,16 @@ namespace Generator_map
 {
     public partial class Form1 : Form
     {
-        Image trawaB;
-        Image wodaB;
-        Image piasekB;
-        Image goryB;
+        Helper helper;
         int[] type; 
         public Form1()
         {
             InitializeComponent();
-            trawaB = Image.FromFile("elementy/trawa.png");
-            wodaB = Image.FromFile("elementy/woda.png");
-            piasekB = Image.FromFile("elementy/piasek.png");
-            goryB = Image.FromFile("elementy/gory.png");
+            helper = new Helper();
             type = new int[7];
         }
 
-        private void Draw(Bitmap bitmap, int intType, int midX, int midY)
-        {
-            Bitmap type = null ;
-            switch (intType)
-            {
-                case 0:
-                    type = new Bitmap(trawaB);
-                    break;
-                case 1:
-                    type = new Bitmap(wodaB);
-                    break;
-                case 2:
-                    type = new Bitmap(piasekB);
-                    break;
-                case 3:
-                    type = new Bitmap(goryB);
-                    break;
-                default:
-                    break;
-            }
-
-
-            for (int i = 0; i < type.Width; i++)
-                for (int j = 0; j < type.Height; j++)
-                {
-                    Color color = type.GetPixel(i, j);
-                    if(color.A !=0)
-                    bitmap.SetPixel(midX + (i - type.Width / 2), midY + (j - type.Height / 2), color);
-
-                }
-        }
-
+       
         private void button1_Click(object sender, EventArgs e)
         {
             decimal temp = przeszkody.Value;
@@ -82,17 +45,31 @@ namespace Generator_map
                 
             }
 
-
-            Draw(elemnt, type[0], 310, 348);
-            Draw(elemnt, type[1], 310, 452);
-            Draw(elemnt, type[2], 400, 296);
-            Draw(elemnt, type[3], 400, 400);
-            Draw(elemnt, type[4], 400, 504);
-            Draw(elemnt, type[5], 490, 348);
-            Draw(elemnt, type[6], 490, 452);
+            int X = elemnt.Width / 2;
+            int Y = elemnt.Height/ 2;
+            int rX = helper.TrawaB.Width;
+            int rY = helper.TrawaB.Height;
+            helper.Draw(elemnt, type[0], X - ((3 * rX) / 4), Y - (rY / 2));
+            helper.Draw(elemnt, type[1], X - ((3 * rX) / 4), Y + (rY / 2));
+            helper.Draw(elemnt, type[2], X, Y - rY);
+            helper.Draw(elemnt, type[3], X, Y);
+            helper.Draw(elemnt, type[4], X, Y+rY);
+            helper.Draw(elemnt, type[5], X + (3 * rX) / 4, Y - (rY / 2));
+            helper.Draw(elemnt, type[6], X + (3 * rX) / 4, Y + (rY / 2));
             string name = "element" + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + ".png";
             
             elemnt.Save(name,System.Drawing.Imaging.ImageFormat.Png);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Manual manual = new Manual(helper);
+            manual.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }

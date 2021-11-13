@@ -29,6 +29,7 @@ namespace Generator_map
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.przeszkody = new System.Windows.Forms.NumericUpDown();
@@ -41,6 +42,8 @@ namespace Generator_map
             this.trawa = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.button2 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.przeszkody)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piasek)).BeginInit();
@@ -175,11 +178,27 @@ namespace Generator_map
             this.radioButton1.Text = "Losowo";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(291, 347);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Recznie";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.trawa);
             this.Controls.Add(this.label5);
@@ -193,7 +212,8 @@ namespace Generator_map
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Recznie";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.przeszkody)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.piasek)).EndInit();
@@ -218,6 +238,8 @@ namespace Generator_map
         private System.Windows.Forms.NumericUpDown trawa;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 
