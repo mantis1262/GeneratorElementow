@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Generator_map</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>Generator_map</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

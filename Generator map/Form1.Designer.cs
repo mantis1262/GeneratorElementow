@@ -33,22 +33,18 @@ namespace Generator_map
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.przeszkody = new System.Windows.Forms.NumericUpDown();
-            this.gory = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.piasek = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.woda = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.trawa = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.button3 = new System.Windows.Forms.Button();
+            this.iArkuszy = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.przeszkody)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.piasek)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.woda)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trawa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iArkuszy)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -57,9 +53,9 @@ namespace Generator_map
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Generuj";
+            this.button1.Text = "Elementy";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label1
             // 
@@ -82,90 +78,6 @@ namespace Generator_map
             this.przeszkody.Size = new System.Drawing.Size(120, 23);
             this.przeszkody.TabIndex = 2;
             // 
-            // gory
-            // 
-            this.gory.Location = new System.Drawing.Point(536, 168);
-            this.gory.Maximum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.gory.Name = "gory";
-            this.gory.Size = new System.Drawing.Size(120, 23);
-            this.gory.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(424, 170);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "góry";
-            // 
-            // piasek
-            // 
-            this.piasek.Location = new System.Drawing.Point(536, 197);
-            this.piasek.Maximum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.piasek.Name = "piasek";
-            this.piasek.Size = new System.Drawing.Size(120, 23);
-            this.piasek.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(424, 199);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "piasek";
-            // 
-            // woda
-            // 
-            this.woda.Location = new System.Drawing.Point(536, 139);
-            this.woda.Maximum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.woda.Name = "woda";
-            this.woda.Size = new System.Drawing.Size(120, 23);
-            this.woda.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(424, 141);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "woda";
-            // 
-            // trawa
-            // 
-            this.trawa.Location = new System.Drawing.Point(536, 110);
-            this.trawa.Maximum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.trawa.Name = "trawa";
-            this.trawa.Size = new System.Drawing.Size(120, 23);
-            this.trawa.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(424, 112);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 15);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "trawa";
-            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
@@ -180,34 +92,113 @@ namespace Generator_map
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(291, 347);
+            this.button2.Location = new System.Drawing.Point(53, 390);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 12;
             this.button2.Text = "Recznie";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(276, 347);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Start";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // iArkuszy
+            // 
+            this.iArkuszy.Location = new System.Drawing.Point(154, 162);
+            this.iArkuszy.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.iArkuszy.Name = "iArkuszy";
+            this.iArkuszy.Size = new System.Drawing.Size(120, 23);
+            this.iArkuszy.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(42, 164);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 15);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "ilosć arkuszy";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(167, 347);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Zadania";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(455, 110);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(55, 19);
+            this.checkBox1.TabIndex = 17;
+            this.checkBox1.Text = "woda";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.Location = new System.Drawing.Point(455, 147);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(50, 19);
+            this.checkBox2.TabIndex = 18;
+            this.checkBox2.Text = "góry";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Checked = true;
+            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox3.Location = new System.Drawing.Point(455, 185);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(59, 19);
+            this.checkBox3.TabIndex = 19;
+            this.checkBox3.Text = "piasek";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.iArkuszy);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.trawa);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.woda);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.piasek);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.gory);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.przeszkody);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -215,10 +206,7 @@ namespace Generator_map
             this.Text = "Recznie";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.przeszkody)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.piasek)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.woda)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trawa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iArkuszy)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,17 +217,16 @@ namespace Generator_map
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown przeszkody;
-        private System.Windows.Forms.NumericUpDown gory;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown piasek;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown woda;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown trawa;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.NumericUpDown iArkuszy;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox3;
     }
 }
 

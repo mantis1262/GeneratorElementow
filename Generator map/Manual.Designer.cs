@@ -64,7 +64,7 @@ namespace Generator_map
             this.leftTop.Name = "leftTop";
             this.leftTop.Size = new System.Drawing.Size(104, 45);
             this.leftTop.TabIndex = 1;
-            this.leftTop.Scroll += new System.EventHandler(this.leftTop_Scroll);
+            this.leftTop.Scroll += new System.EventHandler(this.LeftTop_Scroll);
             // 
             // leftBot
             // 
@@ -74,7 +74,7 @@ namespace Generator_map
             this.leftBot.Name = "leftBot";
             this.leftBot.Size = new System.Drawing.Size(104, 45);
             this.leftBot.TabIndex = 2;
-            this.leftBot.Scroll += new System.EventHandler(this.leftBot_Scroll);
+            this.leftBot.Scroll += new System.EventHandler(this.LeftBot_Scroll);
             // 
             // top
             // 
@@ -84,7 +84,7 @@ namespace Generator_map
             this.top.Name = "top";
             this.top.Size = new System.Drawing.Size(104, 45);
             this.top.TabIndex = 3;
-            this.top.Scroll += new System.EventHandler(this.top_Scroll);
+            this.top.Scroll += new System.EventHandler(this.Top_Scroll);
             // 
             // mid
             // 
@@ -94,7 +94,7 @@ namespace Generator_map
             this.mid.Name = "mid";
             this.mid.Size = new System.Drawing.Size(104, 45);
             this.mid.TabIndex = 4;
-            this.mid.Scroll += new System.EventHandler(this.mid_Scroll);
+            this.mid.Scroll += new System.EventHandler(this.Mid_Scroll);
             // 
             // bot
             // 
@@ -104,7 +104,7 @@ namespace Generator_map
             this.bot.Name = "bot";
             this.bot.Size = new System.Drawing.Size(104, 45);
             this.bot.TabIndex = 5;
-            this.bot.Scroll += new System.EventHandler(this.bot_Scroll);
+            this.bot.Scroll += new System.EventHandler(this.Bot_Scroll);
             // 
             // rightTop
             // 
@@ -114,7 +114,7 @@ namespace Generator_map
             this.rightTop.Name = "rightTop";
             this.rightTop.Size = new System.Drawing.Size(104, 45);
             this.rightTop.TabIndex = 6;
-            this.rightTop.Scroll += new System.EventHandler(this.rightTop_Scroll);
+            this.rightTop.Scroll += new System.EventHandler(this.RightTop_Scroll);
             // 
             // rightBot
             // 
@@ -124,7 +124,7 @@ namespace Generator_map
             this.rightBot.Name = "rightBot";
             this.rightBot.Size = new System.Drawing.Size(104, 45);
             this.rightBot.TabIndex = 7;
-            this.rightBot.Scroll += new System.EventHandler(this.rightBot_Scroll);
+            this.rightBot.Scroll += new System.EventHandler(this.RightBot_Scroll);
             // 
             // button1
             // 

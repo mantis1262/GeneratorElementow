@@ -36,36 +36,36 @@ namespace Generator_map
             elemnt.Save(name, System.Drawing.Imaging.ImageFormat.Png);
         }
 
-        private void leftTop_Scroll(object sender, EventArgs e)
+        private void LeftTop_Scroll(object sender, EventArgs e)
         {
             ChangeColor(leftTop);
         }
 
-        private void bot_Scroll(object sender, EventArgs e)
+        private void Bot_Scroll(object sender, EventArgs e)
         {
             ChangeColor(bot);
         }
 
-        private void leftBot_Scroll(object sender, EventArgs e)
+        private void LeftBot_Scroll(object sender, EventArgs e)
         {
             ChangeColor(leftBot);
         }
 
-        private void mid_Scroll(object sender, EventArgs e)
+        private void Mid_Scroll(object sender, EventArgs e)
         {
             ChangeColor(mid);
         }
 
-        private void rightTop_Scroll(object sender, EventArgs e)
+        private void RightTop_Scroll(object sender, EventArgs e)
         {
             ChangeColor(rightTop);
         }
 
-        private void rightBot_Scroll(object sender, EventArgs e)
+        private void RightBot_Scroll(object sender, EventArgs e)
         {
             ChangeColor(rightBot);
         }
-        private void top_Scroll(object sender, EventArgs e)
+        private void Top_Scroll(object sender, EventArgs e)
         {
             ChangeColor(top);
         }

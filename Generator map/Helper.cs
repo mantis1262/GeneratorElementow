@@ -12,11 +12,18 @@ namespace Generator_map
         Image wodaB;
         Image piasekB;
         Image goryB;
+        Image ufoB;
+        Image questB;
+
 
         public Image TrawaB { get => trawaB; set => trawaB = value; }
         public Image WodaB { get => wodaB; set => wodaB = value; }
         public Image PiasekB { get => piasekB; set => piasekB = value; }
         public Image GoryB { get => goryB; set => goryB = value; }
+        public Image UfoB { get => ufoB; set => ufoB = value; }
+        public Image QuestB { get => questB; set => questB = value; }
+
+
 
         public Helper()
         {
@@ -24,6 +31,8 @@ namespace Generator_map
             wodaB = Image.FromFile("elementy/woda.png");
             piasekB = Image.FromFile("elementy/piasek.png");
             goryB = Image.FromFile("elementy/gory.png");
+            ufoB = Image.FromFile("elementy/trawa-UFO.png");
+            questB = Image.FromFile("elementy/trawa-zadanie.png");
         }
 
         public void Draw(Bitmap bitmap, int intType, int midX, int midY)
@@ -43,6 +52,13 @@ namespace Generator_map
                 case 3:
                     type = new Bitmap(GoryB);
                     break;
+                case 4:
+                    type = new Bitmap(UfoB);
+                    break;
+                case 5:
+                    type = new Bitmap(QuestB);
+                    break;
+
                 default:
                     break;
             }
