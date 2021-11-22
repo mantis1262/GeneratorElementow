@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator map", "Generator map\Generator map.csproj", "{314FA6B7-0DD0-4C6E-B690-54F325BDE8A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generator map", "Generator map\Generator map.csproj", "{314FA6B7-0DD0-4C6E-B690-54F325BDE8A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneratorKart", "GeneratorKart\GeneratorKart.csproj", "{95989CB9-68F4-44B4-83F1-505FEFB7A6F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{314FA6B7-0DD0-4C6E-B690-54F325BDE8A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{314FA6B7-0DD0-4C6E-B690-54F325BDE8A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{314FA6B7-0DD0-4C6E-B690-54F325BDE8A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95989CB9-68F4-44B4-83F1-505FEFB7A6F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95989CB9-68F4-44B4-83F1-505FEFB7A6F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95989CB9-68F4-44B4-83F1-505FEFB7A6F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95989CB9-68F4-44B4-83F1-505FEFB7A6F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
