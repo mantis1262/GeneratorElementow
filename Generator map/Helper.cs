@@ -39,8 +39,8 @@ namespace Generator_map
             ufoB = Image.FromFile("elementy/PoleBazy.png");
             questB = Image.FromFile("elementy/PoleSpecjalne.png");
 
-            Width = trawaB.Width * 6;
-            Height = trawaB.Height * 10;
+            Width = trawaB.Width * 5; //5 - stykanie, 6- odzilne
+            Height = trawaB.Height * 9; //0 - stykanie, 10- odzielnie
         }
 
         public void Draw(Bitmap bitmap, int intType, int midX, int midY)

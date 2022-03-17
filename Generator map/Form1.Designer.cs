@@ -70,7 +70,7 @@ namespace Generator_map
             // 
             this.przeszkody.Location = new System.Drawing.Point(154, 108);
             this.przeszkody.Maximum = new decimal(new int[] {
-            4,
+            5,
             0,
             0,
             0});
@@ -119,7 +119,7 @@ namespace Generator_map
             // 
             this.iArkuszy.Location = new System.Drawing.Point(154, 162);
             this.iArkuszy.Maximum = new decimal(new int[] {
-            4,
+            10,
             0,
             0,
             0});
