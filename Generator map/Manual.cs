@@ -19,7 +19,7 @@ namespace Generator_map
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Bitmap elemnt = new Bitmap(800, 800, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            Bitmap elemnt = new Bitmap(3000, 7000, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
             int X = elemnt.Width / 2;
             int Y = elemnt.Height / 2;
             int rX = helper.TrawaB.Width;

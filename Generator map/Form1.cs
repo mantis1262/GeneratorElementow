@@ -14,7 +14,9 @@ namespace Generator_map
     {
         Helper helper;
         int[] type; 
-        bool[] typeBool; 
+        bool[] typeBool;
+        public List<Pole> eleList;
+
         public Form1()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace Generator_map
             type = new int[7];
             typeBool = new bool[4]
                 { true, true, true, true };
+            eleList = new List<Pole>();
 
         }
 
@@ -30,7 +33,7 @@ namespace Generator_map
         {
             for (int i = 0; i < iArkuszy.Value; i++)
             {
-                Bitmap elemnt = new Bitmap(800, 1200, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+                Bitmap elemnt = new Bitmap(helper.Width, helper.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
                 int X4 = elemnt.Width / 4;
                 int Y6 = elemnt.Height / 6;
@@ -41,7 +44,7 @@ namespace Generator_map
                 GenerujElement(elemnt, X4, 5 * Y6);
                 GenerujElement(elemnt, 3 * X4, 5 * Y6);
 
-                string name = "Arkusz" + i + " " + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + ".png";
+                string name = "../../../Result/Arkusz" + i + " " + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + ".png";
 
                 elemnt.Save(name, System.Drawing.Imaging.ImageFormat.Png);
             }
@@ -50,48 +53,15 @@ namespace Generator_map
 
         private void GenerujElement(Bitmap elemnt, int X, int Y)
         {
-            Random random = new Random();
+            Pole obj;
+            var nonRepet = true;
+            if (eleList.Count >= 2)
+                nonRepet = false;
+             Random random = new Random();
             decimal temp = random.Next(1, (int)przeszkody.Value + 1);
-            if (radioButton1.Checked)
-            {
-                for (int i = 0; i < 7; i++)
-                {
-                    if (temp > 0)
-                    {
-                        do {
-                            var los = random.Next(0, 4);
-                            type[i] = los;
-                        }
-                        while (!typeBool[type[i]]);
-                        if (type[i] != 0) temp--;
-                    }
-                    else
-                    {
-                        type[i] = 0;
-                    }
-                }
-
-            }
-
-
-            int rX = helper.TrawaB.Width;
-            int rY = helper.TrawaB.Height;
-            helper.Draw(elemnt, type[0], X - ((3 * rX) / 4), Y - (rY / 2));
-            helper.Draw(elemnt, type[1], X - ((3 * rX) / 4), Y + (rY / 2));
-            helper.Draw(elemnt, type[2], X, Y - rY);
-            helper.Draw(elemnt, type[3], X, Y);
-            helper.Draw(elemnt, type[4], X, Y + rY);
-            helper.Draw(elemnt, type[5], X + (3 * rX) / 4, Y - (rY / 2));
-            helper.Draw(elemnt, type[6], X + (3 * rX) / 4, Y + (rY / 2));
-        }
-
-
-        private void GenerujZadanie(Bitmap elemnt, int X, int Y)
-        {
-            Random random = new Random();
-            decimal temp = random.Next(1, (int)przeszkody.Value + 1);
-            if (radioButton1.Checked)
-            {
+            //do
+            //{
+                nonRepet = true;
                 for (int i = 0; i < 7; i++)
                 {
                     if (temp > 0)
@@ -109,8 +79,78 @@ namespace Generator_map
                         type[i] = 0;
                     }
                 }
+                obj = new Pole
+                {
+                    x = type
+                };
+                //foreach (var ele in helper.eleList)
+                //{
+                //    if (obj.Equals(ele))
+                //        nonRepet = false;                        
+                //};
+            //} while (nonRepet == false);
 
-            }
+            eleList.Add(obj);
+
+            int rX = helper.TrawaB.Width;
+            int rY = helper.TrawaB.Height;
+            helper.Draw(elemnt, type[0], X - ((3 * rX) / 4), Y - (rY / 2));
+            helper.Draw(elemnt, type[1], X - ((3 * rX) / 4), Y + (rY / 2));
+            helper.Draw(elemnt, type[2], X, Y - rY);
+            helper.Draw(elemnt, type[3], X, Y);
+            helper.Draw(elemnt, type[4], X, Y + rY);
+            helper.Draw(elemnt, type[5], X + (3 * rX) / 4, Y - (rY / 2));
+            helper.Draw(elemnt, type[6], X + (3 * rX) / 4, Y + (rY / 2));
+        }
+
+
+        private void GenerujZadanie(Bitmap elemnt, int X, int Y)
+        {
+            Pole obj;
+            var nonRepet = true;
+            if (eleList.Count >= 2)
+                nonRepet = false;
+            Random random = new Random();
+            decimal temp = random.Next(1, (int)przeszkody.Value + 1); //ilosc pól innych niż trawa
+            //do
+            //{
+
+                for (int i = 0; i < 7; i++)
+                {
+                    if (i != 3)
+                    {
+                        if (temp > 0)
+                        {
+                            do
+                            {
+                                var los = random.Next(0, 4);
+                                type[i] = los;
+                            }
+                            while (!typeBool[type[i]]);
+                            if (type[i] != 0) temp--;
+                        }
+                        else
+                        {
+                            type[i] = 0;
+                        }
+                    }
+                    else
+                        type[i] = 5;
+                }
+            //    obj = new Pole
+            //    {
+            //        x = type
+            //    };
+            //    foreach (var ele in helper.eleList)
+            //    {
+            //        if (obj.Equals(ele))
+            //            nonRepet = false;
+            //        else
+            //            nonRepet = true;
+            //    };
+            //} while (nonRepet == false);
+
+          //  helper.eleList.Add(obj);
 
 
             int rX = helper.TrawaB.Width;
@@ -137,7 +177,7 @@ namespace Generator_map
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            Bitmap elemnt = new Bitmap(800, 1200, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            Bitmap elemnt = new Bitmap(helper.Width, helper.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
             int X = elemnt.Width / 2;
             int Y = elemnt.Height / 2;
             int rX = helper.TrawaB.Width;
@@ -169,7 +209,7 @@ namespace Generator_map
 
 
 
-            string name = "Start" + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + ".png";
+            string name = "../../../Result/Start" + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + ".png";
 
             elemnt.Save(name, System.Drawing.Imaging.ImageFormat.Png);
         }
@@ -178,7 +218,7 @@ namespace Generator_map
         {
             for (int i = 0; i < iArkuszy.Value; i++)
             {
-                Bitmap elemnt = new Bitmap(800, 1200, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+                Bitmap elemnt = new Bitmap(helper.Width, helper.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
                 int X4 = elemnt.Width / 4;
                 int Y6 = elemnt.Height / 6;
@@ -189,7 +229,7 @@ namespace Generator_map
                 GenerujZadanie(elemnt, X4, 5 * Y6);
                 GenerujZadanie(elemnt, 3 * X4, 5 * Y6);
 
-                string name = "Zadanie" + i + " " + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + ".png";
+                string name = "../../../Result/Zadanie" + i + " " + DateTime.Now.Hour.ToString() + DateTime.Now.Minute.ToString() + DateTime.Now.Second.ToString() + ".png";
 
                 elemnt.Save(name, System.Drawing.Imaging.ImageFormat.Png);
             }

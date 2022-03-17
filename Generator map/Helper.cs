@@ -8,12 +8,16 @@ namespace Generator_map
     public class Helper
     {
 
+
         Image trawaB;
         Image wodaB;
         Image piasekB;
         Image goryB;
         Image ufoB;
         Image questB;
+
+        int width;
+        int height;
 
 
         public Image TrawaB { get => trawaB; set => trawaB = value; }
@@ -22,17 +26,21 @@ namespace Generator_map
         public Image GoryB { get => goryB; set => goryB = value; }
         public Image UfoB { get => ufoB; set => ufoB = value; }
         public Image QuestB { get => questB; set => questB = value; }
-
+        public int Width { get => width; set => width = value; }
+        public int Height { get => height; set => height = value; }
 
 
         public Helper()
         {
-            trawaB = Image.FromFile("elementy/trawa.png");
-            wodaB = Image.FromFile("elementy/woda.png");
-            piasekB = Image.FromFile("elementy/piasek.png");
-            goryB = Image.FromFile("elementy/gory.png");
-            ufoB = Image.FromFile("elementy/trawa-UFO.png");
-            questB = Image.FromFile("elementy/trawa-zadanie.png");
+            trawaB = Image.FromFile("elementy/PoleTrawy.png");
+            wodaB = Image.FromFile("elementy/PoleWody.png");
+            piasekB = Image.FromFile("elementy/PolePustynii.png");
+            goryB = Image.FromFile("elementy/PoleGor.png");
+            ufoB = Image.FromFile("elementy/PoleBazy.png");
+            questB = Image.FromFile("elementy/PoleSpecjalne.png");
+
+            Width = trawaB.Width * 6;
+            Height = trawaB.Height * 10;
         }
 
         public void Draw(Bitmap bitmap, int intType, int midX, int midY)
@@ -74,4 +82,19 @@ namespace Generator_map
                 }
         }
     }
+
+    public class Pole
+    {
+        public int[] x = new int[7];
+
+        public override bool Equals(object obj)
+        {
+            var p2 = (Pole)obj;
+            return ((x[0] == p2.x[0]) && (x[2] == p2.x[1])
+                 && (x[2] == p2.x[2]) && (x[3] == p2.x[3])
+                 && (x[4] == p2.x[4]) && (x[5] == p2.x[5])
+                  && (x[6] == p2.x[6])) ? true : false; 
+        }
+    }
+
 }
