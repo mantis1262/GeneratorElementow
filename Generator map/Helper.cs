@@ -15,6 +15,7 @@ namespace Generator_map
         Image goryB;
         Image ufoB;
         Image questB;
+        Image tresB;
 
         int width;
         int height;
@@ -28,7 +29,7 @@ namespace Generator_map
         public Image QuestB { get => questB; set => questB = value; }
         public int Width { get => width; set => width = value; }
         public int Height { get => height; set => height = value; }
-
+        public Image TresB { get => tresB; set => tresB = value; }
 
         public Helper()
         {
@@ -37,7 +38,8 @@ namespace Generator_map
             piasekB = Image.FromFile("elementy/PolePustynii.png");
             goryB = Image.FromFile("elementy/PoleGor.png");
             ufoB = Image.FromFile("elementy/PoleBazy.png");
-            questB = Image.FromFile("elementy/PoleSpecjalne.png");
+            tresB = Image.FromFile("elementy/PoleSpecjalne.png");
+            questB = Image.FromFile("elementy/PoleZadania.png");
 
             Width = trawaB.Width * 5; //5 - stykanie, 6- odzilne
             Height = trawaB.Height * 9; //0 - stykanie, 10- odzielnie
@@ -66,6 +68,9 @@ namespace Generator_map
                 case 5:
                     type = new Bitmap(QuestB);
                     break;
+                case 6:
+                    type = new Bitmap(TresB);
+                    break;
 
                 default:
                     break;
@@ -90,7 +95,7 @@ namespace Generator_map
         public override bool Equals(object obj)
         {
             var p2 = (Pole)obj;
-            return ((x[0] == p2.x[0]) && (x[2] == p2.x[1])
+            return ((x[0] == p2.x[0]) && (x[1] == p2.x[1])
                  && (x[2] == p2.x[2]) && (x[3] == p2.x[3])
                  && (x[4] == p2.x[4]) && (x[5] == p2.x[5])
                   && (x[6] == p2.x[6])) ? true : false; 
